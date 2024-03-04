@@ -16,6 +16,6 @@ async def get_json(message: types.Message):
             dt_upto_iso=json_obj["dt_upto"],
             group_type=json_obj["group_type"]
         )
-        await message.answer(res)
+        await message.answer(json.dumps(res))
     except Exception:
         await message.answer("Получен некорректный json!")
